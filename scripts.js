@@ -1,5 +1,7 @@
-const playerSelection = prompt("Choose Your Weapon?", "Rock, Paper or Scissors");
-const computerSelection = getComputerChoice();
+function getUserChoice() {
+    let userInput = prompt("Choose Your Weapon?", "Rock, Paper or Scissors");
+    return userInput.toLowerCase();
+}
 
 // Function to get a computer choice by randomly.
 
@@ -18,40 +20,49 @@ function getComputerChoice() {
     }
 }; 
 
+const computerSelection = getComputerChoice();
+
 // Function that decides who's the winner by conditional statements
 
 function playRound(playerSelection, computerSelection) { 
     if(playerSelection === computerSelection) { 
-        return "It's a draw.";
+        return "It's a draw";
     }
 
-    if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
+    if (playerSelection === "rock" && computerSelection === "scissors") {
         return "You Won! Rock beats Scissors";
-    } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
+    } else if (playerSelection === "scissors" && computerSelection === "paper") {
         return "You won! Scissors beats Paper";
-    } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock"){
+    } else if (playerSelection === "paper" && computerSelection === "rock"){
         return "You Won! Paper beats Rock";
     } else {
         return "Computer Won";
     } 
 };
 
-const playround =  playRound(playerSelection, computerSelection);
 function game() {
-    let computerScore = 1;
-    let userScore = 1;
-    for (let i = 1; i < 2; i++){
-            if (playround === "Computer Won"){
-              return "Computer:" + computerScore  ;
-            } else if (playround === "It's a draw.") {
-              return `Play again!`;
-            } else {
-              return "You:" + userScore;
-            }
-          }
-      };
+        const playerSelection =  getUserChoice();
+        getComputerChoice();
+        playRound(playerSelection, computerSelection);
+        const playround =  playRound(playerSelection, computerSelection);
+        console.log (`You throws ${playerSelection}.\nComputer throws ${computerSelection}.\n${playround}.`);    
+}
 
-console.log(`You throws ${playerSelection.toLowerCase()}`);
+game();
+game();
+game();
+game();
+game();
+
+
+/*console.log(`You throws ${playerSelection}`);
 console.log(`Computer throws ${computerSelection}`);
 console.log(playRound(playerSelection, computerSelection));      
-console.log(game());
+console.log(game());*/
+
+
+
+
+      
+      
+
