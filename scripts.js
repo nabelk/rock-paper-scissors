@@ -40,67 +40,50 @@ function playRound(playerSelection, computerSelection) {
     } 
 };
 
-// Function for the scores
-
-let computerScore = 0;
-let userScore = 0; 
-function score(playerSelection, computerSelection){
-    
-    if ( playerSelection === "rock" && computerSelection === "scissors" ) {
-        userScore++;
-        return `You - ${userScore } ${computerScore} - Computer`;
-         }
-        if(playerSelection === "scissors" && computerSelection === "paper") {
-            userScore++;
-        return `You - ${userScore } ${computerScore} - Computer`;
-        }
-        if (playerSelection === "paper" && computerSelection === "rock") {
-        userScore++;
-        return `You - ${userScore } ${computerScore} - Computer`;
-        }
-        if (  computerSelection === "rock" &&  playerSelection === "scissors" ) {
-            computerScore++;
-            return `You - ${userScore} ${computerScore } - Computer`;
-             }
-            if(computerSelection === "scissors" && playerSelection === "paper") {
-                computerScore++;
-            return `You - ${userScore } ${computerScore } - Computer`;
-            }
-            if (computerSelection === "paper" && playerSelection === "rock") {
-            computerScore++;
-            return `You - ${userScore } ${computerScore } - Computer`;
-            }
-}
+// Function that play a 5 round game and update the scores
 
 function game() {
+    let computerScore = 0;
+    let userScore = 0; 
+    alert("Welcome to Rock, Paper & Scissors game. This is a 5 round game. Good Luck!");
     for ( let i = 1; i <= 5; i++) {
-
         const playerSelection =  getUserChoice();
         const computerSelection = getComputerChoice();;
-        playRound(playerSelection, computerSelection);
-        const getscore = score(playerSelection, computerSelection);
         const playround =  playRound(playerSelection, computerSelection);
-        console.log (`You throws ${playerSelection}.\nComputer throws ${computerSelection}.\n${playround}\n${getscore}.`);    
+        if ( playerSelection === "rock" && computerSelection === "scissors" ) {
+            userScore++;
+        }
+        if(playerSelection === "scissors" && computerSelection === "paper") {
+            userScore++;
+        }
+        if (playerSelection === "paper" && computerSelection === "rock") {
+            userScore++;
+        }
+        if(  computerSelection === "rock" &&  playerSelection === "scissors" ) {
+            computerScore++;
+        }
+        if(computerSelection === "scissors" && playerSelection === "paper") {
+            computerScore++;
+        }
+        if (computerSelection === "paper" && playerSelection === "rock") {
+            computerScore++;
+        }
+        alert (`You throws ${playerSelection}.\nComputer throws ${computerSelection}.\n${playround}\nYou - ${userScore}, Computer - ${computerScore}`);
+        console.log(`You throws ${playerSelection}.\nComputer throws ${computerSelection}.\n${playround}\nYou - ${userScore}, Computer - ${computerScore}`);      
     }
-}
-
-game();
-
-/*function fiveround() {
    
-
+    if (userScore > computerScore){
+        alert (`Congrats!\nFinal Score: You won by ${userScore} to ${computerScore}.`);
+        console.log(`Congrats!\nFinal Score: You won by ${userScore} to ${computerScore}.`);
+    } else if (userScore === computerScore){
+        alert(`Tight game!\nFinal Score: You share the same points with Computer by ${userScore} - ${computerScore}.`);
+        console.log(`Tight game!\nFinal Score: You share the same points with Computer by ${userScore} - ${computerScore}.`);
+    } else {
+        alert (`Try again next time!\nFinal Score: Computer won by ${computerScore} to ${userScore}.`);
+        console.log(`Try again next time!\nFinal Score: Computer won by ${computerScore} to ${userScore}.`);
+    }
+    
 }
 
- 
-fiveround();
-
-/*console.log(`You throws ${playerSelection}`);
-console.log(`Computer throws ${computerSelection}`);
-console.log(playRound(playerSelection, computerSelection));      
-console.log(game());*/
-
-
-
-
-      
-      
+// Callback function to game() function
+game();      
