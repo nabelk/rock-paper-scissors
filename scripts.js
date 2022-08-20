@@ -1,3 +1,5 @@
+// Function to get a user choice
+
 function getUserChoice() {
     let userInput = prompt("Choose Your Weapon?", "Rock, Paper or Scissors");
     return userInput.toLowerCase();
@@ -20,8 +22,6 @@ function getComputerChoice() {
     }
 }; 
 
-const computerSelection = getComputerChoice();
-
 // Function that decides who's the winner by conditional statements
 
 function playRound(playerSelection, computerSelection) { 
@@ -40,20 +40,60 @@ function playRound(playerSelection, computerSelection) {
     } 
 };
 
+// Function for the scores
+
+let computerScore = 0;
+let userScore = 0; 
+function score(playerSelection, computerSelection){
+    
+    if ( playerSelection === "rock" && computerSelection === "scissors" ) {
+        userScore++;
+        return `You - ${userScore } ${computerScore} - Computer`;
+         }
+        if(playerSelection === "scissors" && computerSelection === "paper") {
+            userScore++;
+        return `You - ${userScore } ${computerScore} - Computer`;
+        }
+        if (playerSelection === "paper" && computerSelection === "rock") {
+        userScore++;
+        return `You - ${userScore } ${computerScore} - Computer`;
+        }
+        if (  computerSelection === "rock" &&  playerSelection === "scissors" ) {
+            computerScore++;
+            return `You - ${userScore} ${computerScore } - Computer`;
+             }
+            if(computerSelection === "scissors" && playerSelection === "paper") {
+                computerScore++;
+            return `You - ${userScore } ${computerScore } - Computer`;
+            }
+            if (computerSelection === "paper" && playerSelection === "rock") {
+            computerScore++;
+            return `You - ${userScore } ${computerScore } - Computer`;
+            }
+}
+
 function game() {
+    for ( let i = 1; i <= 5; i++) {
+
         const playerSelection =  getUserChoice();
-        getComputerChoice();
+        const computerSelection = getComputerChoice();;
         playRound(playerSelection, computerSelection);
+        score(playerSelection, computerSelection);
+        const getscore = score(playerSelection, computerSelection);
         const playround =  playRound(playerSelection, computerSelection);
-        console.log (`You throws ${playerSelection}.\nComputer throws ${computerSelection}.\n${playround}.`);    
+        console.log (`You throws ${playerSelection}.\nComputer throws ${computerSelection}.\n${playround}\n${getscore}.`);    
+    }
 }
 
 game();
-game();
-game();
-game();
-game();
 
+/*function fiveround() {
+   
+
+}
+
+ 
+fiveround();
 
 /*console.log(`You throws ${playerSelection}`);
 console.log(`Computer throws ${computerSelection}`);
@@ -65,4 +105,3 @@ console.log(game());*/
 
       
       
-
