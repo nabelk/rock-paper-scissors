@@ -48,6 +48,8 @@ function game() {
     let computerScore = 0;
     let userScore = 0; 
     alert("Welcome to Rock, Paper & Scissors game. This is a 5 round game. Good Luck!");
+    let name = prompt("Your Name?");
+    name = name.charAt(0).toUpperCase() + name.slice(1);
     for ( let i = 1; i <= 5; i++) {
         const playerSelection =  getUserChoice();
         const computerSelection = getComputerChoice();;
@@ -70,18 +72,18 @@ function game() {
         if (computerSelection === "paper" && playerSelection === "rock") {
             computerScore++;
         }
-        alert (`You throws ${playerSelection}.\nComputer throws ${computerSelection}.\n${playround}\nYou - ${userScore}, Computer - ${computerScore}`);
-        console.log(`You throws ${playerSelection}.\nComputer throws ${computerSelection}.\n${playround}\nYou - ${userScore}, Computer - ${computerScore}`);      
+        alert (`You throws ${playerSelection}.\nComputer throws ${computerSelection}.\n${playround}\n${name} - ${userScore}, Computer - ${computerScore}`);
+        console.log(`You throws ${playerSelection}.\nComputer throws ${computerSelection}.\n${playround}\n${name} - ${userScore}, Computer - ${computerScore}`);      
     }
    
     if (userScore > computerScore){
-        alert (`Congrats!\nFinal Score: You won by ${userScore} to ${computerScore}.`);
+        alert (`Congrats, ${name}!\nFinal Score: You won by ${userScore} to ${computerScore}.`);
         console.log(`Congrats!\nFinal Score: You won by ${userScore} to ${computerScore}.`);
     } else if (userScore === computerScore){
-        alert(`Tight game!\nFinal Score: You share the same points with Computer by ${userScore} - ${computerScore}.`);
+        alert(`Tight game, ${name}!\nFinal Score: You share the same points with Computer by ${userScore} - ${computerScore}.`);
         console.log(`Tight game!\nFinal Score: You share the same points with Computer by ${userScore} - ${computerScore}.`);
     } else {
-        alert (`Try again next time!\nFinal Score: Computer won by ${computerScore} to ${userScore}.`);
+        alert (`Try again next time, ${name}!\nFinal Score: Computer won by ${computerScore} to ${userScore}.`);
         console.log(`Try again next time!\nFinal Score: Computer won by ${computerScore} to ${userScore}.`);
     }
     
