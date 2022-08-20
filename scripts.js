@@ -25,6 +25,8 @@ function getComputerChoice() {
 // Function that decides who's the winner by conditional statements
 
 function playRound(playerSelection, computerSelection) { 
+    let computerInput = computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
+    let playerInput = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
     if(playerSelection === computerSelection) { 
         return "It's a draw";
     }
@@ -36,7 +38,7 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection === "paper" && computerSelection === "rock"){
         return "You Won! Paper beats Rock";
     } else {
-        return "Computer Won";
+        return `Computer Won! ${computerInput} beats ${playerInput}`;
     } 
 };
 
