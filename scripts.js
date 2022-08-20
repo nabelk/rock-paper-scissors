@@ -78,7 +78,6 @@ function game() {
         const playerSelection =  getUserChoice();
         const computerSelection = getComputerChoice();;
         playRound(playerSelection, computerSelection);
-        score(playerSelection, computerSelection);
         const getscore = score(playerSelection, computerSelection);
         const playround =  playRound(playerSelection, computerSelection);
         console.log (`You throws ${playerSelection}.\nComputer throws ${computerSelection}.\n${playround}\n${getscore}.`);    
