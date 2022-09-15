@@ -1,0 +1,10 @@
+#center-element {
+    display: flex; 
+    justify-content: center; 
+    gap: 50px; 
+}
+
+.score {
+    display: flex; 
+    gap:10px;
+}
