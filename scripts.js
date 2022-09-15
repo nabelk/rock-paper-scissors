@@ -1,11 +1,25 @@
 // Function to get a user choice
 
-function getUserChoice() {
+/* function getUserChoice() {
     let userInput = prompt("Choose Your Weapon?", "Rock, Paper or Scissors");
     return userInput.toLowerCase();
-}
+} */
 
-// Function to get a computer choice by randomly.
+//Function to get a user choice for event button
+let buttonRock = document.querySelector(".rock");
+let buttonScissors = document.querySelector(".scissors");
+let buttonPaper = document.querySelector(".paper");
+buttonRock.addEventListener("click", () => {
+    console.log("rock")
+})
+buttonScissors.addEventListener("click", () => {
+    console.log("scissors")
+})
+buttonPaper.addEventListener("click", () => {
+    console.log("paper")
+})
+
+// Function to get a computer choice by randomly."
 
 function getComputerChoice() {
     let random = Math.floor(Math.random() * 3);
@@ -90,4 +104,4 @@ function game() {
 }
 
 // Callback function to game() function
-game();      
+/* game(); */
