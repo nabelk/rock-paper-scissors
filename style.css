@@ -1,3 +1,9 @@
+body {
+    margin: 0px;
+    min-height: 100vh;
+    background-color: beige;
+}
+
 #center-element {
     display: flex; 
     justify-content: center; 
@@ -6,5 +12,9 @@
 
 .score {
     display: flex; 
+    justify-content: center;
     gap:10px;
+    background-color: grey;
+    padding: 25px;
+    width: 150px;
 }
