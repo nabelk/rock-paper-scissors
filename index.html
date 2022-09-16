@@ -8,6 +8,7 @@
     </head>
 
     <body>
+        <div id="winner"></div>
         <h1 id="center-element">Choose Your Weapon</h1>
         <div id="center-element" class="button">
             <button class="rock" value="rock" >Rock</button>
@@ -15,16 +16,19 @@
             <button class="paper" value="paper">Paper</button>
         </div>
         <br>
-        <div id="center-element" style="background-color: red; padding: 5%;">The content of rounds</div>
+        <div style="background-color: red; padding: 5%; text-align: center;">
+            <div class="result"></div>
+            <div id="result"></div>
+        </div>
         <br>
         <div id="center-element" >
             <div class="user score" >
                 <div>User</div>
-                <div>1</div>
+                <div id="user">0</div>
             </div>
             <div class="computer score" >
                 <div>Computer</div>
-                <div>2</div>
+                <div id="computer">0</div>
             </div>
         </div>
     </body>
