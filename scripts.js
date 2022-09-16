@@ -5,18 +5,11 @@
     return userInput.toLowerCase();
 } */
 
-//Function to get a user choice for event button
-let buttonRock = document.querySelector(".rock");
-let buttonScissors = document.querySelector(".scissors");
-let buttonPaper = document.querySelector(".paper");
-buttonRock.addEventListener("click", () => {
-    console.log("rock")
-})
-buttonScissors.addEventListener("click", () => {
-    console.log("scissors")
-})
-buttonPaper.addEventListener("click", () => {
-    console.log("paper")
+// Add event click to the player input button
+
+const button = document.querySelectorAll("button");
+button.forEach(btn => {
+    btn.addEventListener("click", playRound)      
 })
 
 // Function to get a computer choice by randomly."
@@ -38,22 +31,35 @@ function getComputerChoice() {
 
 // Function that decides who's the winner by conditional statements
 
-function playRound(playerSelection, computerSelection) { 
-    let computerInput = computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
-    let playerInput = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
-    if(playerSelection === computerSelection) { 
-        return "It's a draw";
-    }
+function playRound(e) { 
+    // user Input
+    const playerSelection = e.target.value;
+    const playerInput = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
+    // computer random Input
+    const computerSelection = getComputerChoice();
+    const compInput = computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
+    // Score variable
+    let computerScore = 0;
+    let userScore = 0; 
 
-    if (playerSelection === "rock" && computerSelection === "scissors") {
-        return "You Won! Rock beats Scissors";
-    } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        return "You won! Scissors beats Paper";
-    } else if (playerSelection === "paper" && computerSelection === "rock"){
-        return "You Won! Paper beats Rock";
+    console.log(`You throws ${playerInput}.\nComputer throws ${compInput}.`)
+    
+    if( playerSelection === computerSelection){
+        console.log("It's a draw");
+    } else if (e.target.classList.contains("rock") && computerSelection === "scissors") {
+        console.log ("You Won! Rock beats Scissors");
+        userScore++;
+    } else if (e.target.classList.contains("scissors") && computerSelection === "paper") {
+        console.log ("You won! Scissors beats Paper");
+        userScore++;
+    } else if (e.target.classList.contains("paper") && computerSelection === "rock"){
+        console.log ("You Won! Paper beats Rock");
+        userScore++;
     } else {
-        return `Computer Won! ${computerInput} beats ${playerInput}`;
+        console.log (`Computer Won! ${compInput} beats ${playerInput}`);
+        computerScore++;
     } 
+    console.log(`user - ${userScore}, Computer - ${computerScore}`);      
 };
 
 // Function that play a 5 round game and update the scores
