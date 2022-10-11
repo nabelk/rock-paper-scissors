@@ -13,7 +13,7 @@
 ## General Information
 - This project is a part of The Odin Project:Foundations course.
 - It's a straight-up Rock, Paper & Scissors game of a user vs computer.
-- The script that been written to determine who's the winner for each of rounds.
+- The script that been written is to determine who's the winner for each of the round.
 - Next, the purpose of the game is to play a 5 rounds (phase 1) and then, who get the first 5 points (phase 2)
 - Why did you undertake it? To get used of js fundamentals that has been learned so far.
 - Phase 1: Creating a script without any UI, just using prompt and alert. (branch:main)
