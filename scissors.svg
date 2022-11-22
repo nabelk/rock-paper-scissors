@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<svg width="128" version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<circle class="st0" cx="8.2" cy="23.8" r="4.9"/>
+<path class="st0" d="M9.4,19.1L22.1,6.4c1.9-1.9,5-1.9,6.9,0l0,0l-16,16"/>
+<circle class="st0" cx="8.2" cy="8.2" r="4.9"/>
+<path class="st0" d="M16.1,19.3l5.9,6.2c1.9,1.9,5,1.9,6.9,0l0,0L19.4,16"/>
+</svg>
