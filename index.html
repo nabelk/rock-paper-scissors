@@ -11,12 +11,12 @@
         <div class="winner" id="center-element"></div>
         <h1 id="center-element" class="remove">Choose Your Weapon</h1>
         <div id="center-element" class="button remove">
-            <button class="rock remove" value="rock" >Rock</button>
-            <button class="scissors remove" value="scissors">Scissors</button>
-            <button class="paper remove" value="paper">Paper</button>
+            <div id="weapon" class="remove"><img class="rock" value="rock" src="rock.svg" alt=""></div>
+            <div id="weapon" class="remove"><img class="scissors" value="scissors"  src="scissors.svg" alt=""></div>
+            <div id="weapon" class="remove"><img class="paper" value="paper" src="paper.svg" alt=""></div>
         </div>
         <br class="remove">
-        <div style="background-color: rgb(48, 213, 208); padding: 2.5%; text-align: center;" class="remove">
+        <div class="remove">
             <div class="result"></div>
             <div id="result"></div>
             <div id="pointResult"></div>
@@ -33,7 +33,7 @@
             </div>
         </div> 
         <h2 id="center-element" class="addResult"></h2>
-        <div id="playagain" style="display: none; justify-content: center;">
+        <div id="playagain">
             <input type="button" value="Play Again" onClick="refresh(this)">
         </div>
 
