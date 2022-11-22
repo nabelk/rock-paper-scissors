@@ -1,20 +1,145 @@
+:root{
+    font-size: 18px;
+}
+
 body {
     margin: 0px;
     min-height: 100vh;
     background-color: beige;
+    width: 100vw;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #center-element {
     display: flex; 
     justify-content: center; 
+    align-items: center;
     gap: 50px; 
 }
 
-.score {
+body > h1:nth-child(2){
+    height: 5vh;
+    width:50%;
+}
+
+body > div:nth-child(3){
+    height: 35vh;
+    width:50%;
+}
+
+img {
+    padding:10px;
+    border-radius: 5px;
+}
+
+img:active {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+img:hover {
+    border-radius: 5px;
+    border: solid 3px black;
+}
+
+@keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+
+body > div:nth-child(5){
+    background-color: lightseagreen;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 50%;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+body > div:nth-child(7){
+    height: 20vh;
+    width: 50%;
+}
+
+div.score {
     display: flex; 
     justify-content: center;
     gap:10px;
     background-color: grey;
     padding: 25px;
     width: 150px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+div#playagain {
+    display: none; 
+    justify-content: center;
+}
+
+input[type="button"] {
+    font-size: 1rem;
+    width: 130px;
+    height: 40px;
+    border: solid 2px black;
+    border-radius: 5px;
+}
+
+input[type="button"]:hover {
+    background-color: gainsboro;
+}
+
+/* Mobile media query */
+
+@media only screen  and (max-device-width:500px) {
+    :root {
+        font-size: 23px;
+    }
+
+    body > h1:nth-child(2){
+        height: 0vh;
+    }
+
+    body > div:nth-child(3){
+        height: 20vh;
+    }
+
+    body > div:nth-child(5){
+       height: 20vh;
+       width: 60%;
+    }
+    
+    body > div:nth-child(7){
+        height: 15vh;
+       
+    }
+
+    
 }
