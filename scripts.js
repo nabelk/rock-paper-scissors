@@ -5,8 +5,8 @@ function refresh(){
 
 // Add event click to the player input button
 
-const button = document.querySelectorAll("button");
-button.forEach(btn => {
+const weaponBtn = document.querySelectorAll("img");
+weaponBtn.forEach(btn => {
     btn.addEventListener("click", playRound)
 })
 
@@ -37,8 +37,15 @@ userName = userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase();
 document.getElementById("userName").textContent = userName;
 
 function playRound(e) { 
+    weaponBtn.forEach (btn => {
+        btn.style.backgroundColor = null; 
+        btn.style.border = null;
+        btn.style.animation = null;
+    })
+    e.target.style.animation ="wiggle 2.5s linear"
+    e.target.style.border = "solid 3px black";
     // User Input to print on p.Result element
-    const playerSelection = e.target.value;
+    const playerSelection = e.target.classList.value;
     const playerInput = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
 
     // Computer random Input
@@ -59,15 +66,15 @@ function playRound(e) {
             pointResult.textContent = "";
         } else if (e.target.classList.contains("rock") && computerSelection === "scissors") {
             pResult.textContent =  "You Won! Rock beats Scissors";
-            pointResult.textContent = `1 point fot ${userName}`; 
+            pointResult.textContent = `1 point for ${userName}`; 
             userScore++
         } else if (e.target.classList.contains("scissors") && computerSelection === "paper") {
             pResult.textContent =  "You won! Scissors beats Paper";
-            pointResult.textContent = `1 point fot ${userName}`;
+            pointResult.textContent = `1 point for ${userName}`;
             userScore++;
         } else if (e.target.classList.contains("paper") && computerSelection === "rock"){
             pResult.textContent =  "You Won! Paper beats Rock";
-            pointResult.textContent = `1 point fot ${userName}`;
+            pointResult.textContent = `1 point for ${userName}`;
             userScore++;
         } else {
             pResult.textContent =  `Computer Won! ${compInput} beats ${playerInput}`;
